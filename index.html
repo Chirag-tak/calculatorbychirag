@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>By Chirag Tak</header>
+    <h1>Calculator</h1>
+    <div class="container">
+        <div class="answer_gap">
+            <textarea id="display">0</textarea>
+        </div>
+        <table class="table1">
+            <tr class="first_row">
+                <th><button class="clean button" onclick="clearDisplay()">Clear</button></th>
+                <th><button class="mod button" onclick="appendOperator('%')">%</button></th>
+                <th><button class="sub button" onclick="backspace()">Backspace</button></th>
+                <th><button class="div button" onclick="appendOperator('/')">/</button></th>
+            </tr>
+            <tr class="second_row">
+                <th><button class="seven button" onclick="appendNumber('7')">7</button></th>
+                <th><button class="eight button" onclick="appendNumber('8')">8</button></th>
+                <th><button class="nine button" onclick="appendNumber('9')">9</button></th>
+                <th><button class="mult button" onclick="appendOperator('*')">X</button></th>
+            </tr>
+            <tr class="third_row">
+                <th><button class="four button" onclick="appendNumber('4')">4</button></th>
+                <th><button class="five button" onclick="appendNumber('5')">5</button></th>
+                <th><button class="six button" onclick="appendNumber('6')">6</button></th>
+                <th><button class="sub button" onclick="appendOperator('-')">-</button></th>
+            </tr>
+            <tr class="forth_row">
+                <th><button class="one button" onclick="appendNumber('1')">1</button></th>
+                <th><button class="two button" onclick="appendNumber('2')">2</button></th>
+                <th><button class="three button" onclick="appendNumber('3')">3</button></th>
+                <th><button class="add button" onclick="appendOperator('+')">+</button></th>
+            </tr>
+            <tr class="fifth_row">
+                <th><button class="zero button" onclick="appendNumber('0')">0</button></th>
+                <th><button class="dzero button" onclick="appendNumber('00')">00</button></th>
+                <th><button class="decimal button" onclick="appendNumber('.')">.</button></th>
+                <th><button class="answer button" onclick="calculateResult()">=</button></th>
+            </tr>
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
