@@ -1,45 +1,47 @@
 
 alert("Welcome to Our site");
-let display=document.getElementById("display");
-function clearDisplay(){
-    display.value="0";
+let display = document.getElementById("display");
+function clearDisplay() {
+    display.value = "0";
 }
-function appendNumber(number){
-    if(display.value === '0'){
+function appendNumber(number) {
+    if (display.value === '0') {
         display.value = number;
-    }else{
+    } else {
         display.value += number;
     }
 }
-function appendOperator(operator){
+function appendOperator(operator) {
     display.value += operator;
 }
-function backspace(){
-    display.value=display.value.slice(0,-1);
-    if(display.value===''){
-        display.value='0';
+function backspace() {
+    display.value = display.value.slice(0, -1);
+    if (display.value === '') {
+        display.value = '0';
     }
 }
-function calculateResult(){
-    try{
-        display.value=eval(display.value);
-    }catch{
-        display.value='Error';
+function calculateResult() {
+    try {
+        display.value = eval(display.value);
+    } catch {
+        display.value = 'Error';
     }
 }
 
-document.addEventListener("keydown",function(event){
-    if(event.key==="Enter"){
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
         calculateResult();
     }
-    else if(event.key==="*"||event.key==="+"||event.key==="-"||event.key==="/"||event.key==="/"){
+    if (["*", "+", "-", "/"].includes(event.key)) {
         appendOperator(event.key);
-    }else if (event.key === "Backspace"|| event.key==="Delete") { 
+    }
+    if (event.key === "Backspace" || event.key === "Delete" || event.key === "B" || event.key === "b") {
         backspace();
-      }else if(event.key==="C"|| event.key==="c"){
+    }
+    if (event.key === "C" || event.key === "c") {
         clearDisplay();
     }
-    else{
+    if (["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"].includes(event.key)) {
         appendNumber(event.key);
     }
 });
